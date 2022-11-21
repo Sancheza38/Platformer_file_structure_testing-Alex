@@ -6,8 +6,8 @@ import pygame as pg
 
 from .. import prepare, state_machine, tools
 
-SKY_COLOR = (66, 120, 150)
-SKY_RECT = pg.Rect(0, 0, 1280, 697)
+SKY_COLOR = (153, 51, 255)
+SKY_RECT = pg.Rect(0, 0, 1280, 1024)
 
 class Title(state_machine._State):
     """This State is updated while showing the title screen"""
@@ -60,7 +60,7 @@ class AnyKey(pg.sprite.Sprite):
         self.null_image = pg.Surface((1,1)).convert_alpha()
         self.null_image.fill((0,0,0,0))
         self.image = self.raw_image
-        center = (prepare.SCREEN_RECT.centerx, 650)
+        center = (prepare.SCREEN_RECT.centerx, 768)
         self.rect = self.image.get_rect(center=center)
         self.blink = False
         self.timer = tools.Timer(200)

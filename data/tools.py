@@ -35,7 +35,7 @@ class Control(object):
         if not self.state_machine.state.done:
             self.state_machine.draw(self.screen, interpolate)
             pg.display.update()
-            # self.show_fps()
+            self.show_fps()
     
     def event_loop(self):
         """
@@ -52,6 +52,14 @@ class Control(object):
                 self.keys = pg.key.get_pressed()
             self.state_machine.get_event(event)
     
+    def show_fps(self):
+        """
+        Display the current FPS
+        """
+        fps = self.clock.get_fps()
+        with_fps = "{} - {:.2f} FPS".format(self.caption, fps)
+        pg.display.set_caption(with_fps)
+
     def main(self):
         """
         Main loop for entire program. Uses a constant timestep.
