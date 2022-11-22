@@ -8,6 +8,7 @@ from .. import prepare, state_machine, tools
 
 SKY_COLOR = (153, 51, 255)
 SKY_RECT = pg.Rect(0, 0, 1280, 1024)
+MUSIC = pg.mixer.music
 
 class Title(state_machine._State):
     """This State is updated while showing the title screen"""
@@ -22,11 +23,15 @@ class Title(state_machine._State):
         self.ground = title
         self.elements = self.make_elements()
         self.timer = None
+        self.music = MUSIC
+        self.music.load(prepare.mainTheme)
         
     def startup(self, now, persistant):
         self.persist = persistant
         self.start_time = now
         self.elements = self.make_elements()
+        self.music.play(-1)
+        
 
     def make_elements(self):
         group = pg.sprite.LayeredUpdates()

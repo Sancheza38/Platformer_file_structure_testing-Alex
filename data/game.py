@@ -107,7 +107,3 @@ def game():
         #pygame.draw.rect(background, NAVYBLUE, pygame.Rect(0,200,200,300))
         pygame.display.flip()
 
-#Looping main screen music
-pygame.mixer.init()
-pygame.mixer.music.load(prepare.mainTheme)
-pygame.mixer.music.play(-1)
