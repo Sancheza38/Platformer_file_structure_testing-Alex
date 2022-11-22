@@ -91,6 +91,8 @@ def game():
         logging.writeLog("No input type selected, shutting down")
         return 1
 
+
+
     while True: #Main game loop
         for event in pygame.event.get(): #Loops through every event, can be keyboard or mouse input etc
             if event.type == pygame.QUIT:
@@ -103,7 +105,5 @@ def game():
         if prepare.chosenMode == "levelOne":
             levelOne()
         prepare.clock.tick(60)
-        #mainscreen.blit(background, (0,0))
-        #pygame.draw.rect(background, NAVYBLUE, pygame.Rect(0,200,200,300))
         pygame.display.flip()
 

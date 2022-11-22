@@ -54,8 +54,9 @@ class Title(state_machine._State):
         press.
         """
         if event.type == pg.KEYDOWN:
-            self.next = "SELECT"
+            self.next = "GAME"
             self.done = True
+            self.music.stop()
 
 class AnyKey(pg.sprite.Sprite):
     def __init__(self, *groups):
